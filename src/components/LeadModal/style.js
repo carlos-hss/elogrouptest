@@ -7,7 +7,7 @@ export const SectionModal = styled.section`
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: rgb(0, 0, 0, 0.6);
+    background-color: rgb(0, 0, 0, 0.85);
 `;
 
 export const DivModal = styled.div`
@@ -42,6 +42,36 @@ export const DivModal = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+`;
+
+export const ExitIcon = styled.div`
+    width: 2rem;
+    height: 1.3rem;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 20;
+    cursor: pointer;
+
+    div {
+        width: 2rem;
+        height: 4px;
+        background-color: var(--white);
+        border-radius: 10px;
+        transform-origin: 9px;
+        transition: all 0.3s linear;
+
+        :nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        :nth-child(2) {
+            transform: rotate(-45deg);
         }
     }
 `;
@@ -83,6 +113,7 @@ export const DivData = styled.div`
 
             .width-checked {
                 width: 10%;
+                text-align: center;
             }
 
             .width-description {
