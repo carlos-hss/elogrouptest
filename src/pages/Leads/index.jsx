@@ -4,6 +4,7 @@ import Logo from "../../images/logo.png";
 import { useContext } from "react";
 import { LeadsContext } from "../../Providers/leads";
 import LeadModal from "../../components/LeadModal";
+import Card from "../../components/Card";
 
 const Leads = () => {
     const { isModal, setIsModal, listLeads } = useContext(LeadsContext);
@@ -34,9 +35,21 @@ const Leads = () => {
                     <tbody>
                         {listLeads.map((lead, index) => (
                             <tr key={index}>
-                                <td>{lead.name}</td>
-                                <td></td>
-                                <td></td>
+                                <Card
+                                    status={"Cliente em Potencial"}
+                                    lead={lead}
+                                >
+                                    {lead.status === "Cliente em Potencial" &&
+                                        lead.name}
+                                </Card>
+                                <Card status={"Dados Confirmados"} lead={lead}>
+                                    {lead.status === "Dados Confirmados" &&
+                                        lead.name}
+                                </Card>
+                                <Card status={"Reunião Agendada"} lead={lead}>
+                                    {lead.status === "Reunião Agendada" &&
+                                        lead.name}
+                                </Card>
                             </tr>
                         ))}
                     </tbody>

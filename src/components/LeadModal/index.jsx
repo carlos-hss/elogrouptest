@@ -3,22 +3,10 @@ import { SectionModal, DivModal, DivData, ExitIcon } from "./style";
 import Logo from "../../images/logo.png";
 import { useContext } from "react";
 import { LeadsContext } from "../../Providers/leads";
-import { useEffect } from "react";
 
 const LeadModal = () => {
-    const {
-        lead,
-        setLead,
-        isChecked,
-        setIsChecked,
-        setIsModal,
-        listLeads,
-        setListLeads,
-    } = useContext(LeadsContext);
-
-    useEffect(() => {
-        localStorage.setItem("Leads", JSON.stringify([...listLeads]));
-    }, [listLeads]);
+    const { lead, setLead, isChecked, setIsChecked, setIsModal, addLead } =
+        useContext(LeadsContext);
 
     return (
         <SectionModal>
@@ -189,14 +177,7 @@ const LeadModal = () => {
                                 </tr>
                             </tbody>
                         </table>
-                        <button
-                            onClick={() => {
-                                setListLeads([...listLeads, lead]);
-                                setIsModal(false);
-                            }}
-                        >
-                            Salvar
-                        </button>
+                        <button onClick={addLead}>Salvar</button>
                     </div>
                 </DivData>
             </DivModal>

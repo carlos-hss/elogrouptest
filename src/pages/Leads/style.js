@@ -5,16 +5,12 @@ export const Table = styled.table`
     max-height: 350px;
     border-collapse: collapse;
 
-    th,
-    td {
+    th {
         text-align: center;
         width: 33.33%;
         height: 60px;
         font-size: 12px;
         border: 1px solid var(--black);
-    }
-
-    th {
         background-color: var(--gray);
         color: var(--white);
     }
@@ -50,13 +46,13 @@ export const SectionTable = styled.section`
         height: 50%;
 
         img {
-            width: 230px;
+            width: 150px;
         }
 
         p {
             width: 50%;
-            height: 52px;
-            font-size: 18px;
+            height: 34px;
+            font-size: 14px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -85,6 +81,18 @@ export const SectionTable = styled.section`
                 background-color: var(--white);
                 color: var(--blue);
                 border-radius: 5px;
+            }
+        }
+    }
+
+    @media screen and (min-width: 500px) {
+        .div-logo {
+            img {
+                width: 230px;
+            }
+            p {
+                height: 52px;
+                font-size: 18px;
             }
         }
     }
